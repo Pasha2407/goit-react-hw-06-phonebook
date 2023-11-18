@@ -1,6 +1,10 @@
+import { useDispatch } from 'react-redux';
+import { addFilter } from 'redux/filter.reducer';
 import css from './Form.module.css';
 
-const Filter = ({ filterChange, filterValue }) => {
+const Filter = () => {
+  const dispatch = useDispatch();
+
   return (
     <form className={css.Form}>
       <label>
@@ -8,8 +12,7 @@ const Filter = ({ filterChange, filterValue }) => {
         <input
           type="text"
           name="filter"
-          onChange={filterChange}
-          value={filterValue}
+          onChange={event => dispatch(addFilter(event.target.value))}
         ></input>
       </label>
     </form>
