@@ -2,7 +2,7 @@ import css from './Form.module.css';
 
 const Filter = ({ filterChange, filterValue }) => {
   return (
-    <form className={css.form}>
+    <form className={css.Form}>
       <label>
         <span>Find contacts by name</span>
         <input

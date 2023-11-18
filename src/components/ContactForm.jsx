@@ -5,7 +5,7 @@ const ContactForm = ({ addContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const InputChange = event => {
+  const inputChange = event => {
     const value = event.target.value;
     const name = event.target.name;
     switch (name) {
@@ -22,7 +22,7 @@ const ContactForm = ({ addContact }) => {
     }
   };
 
-  const Submit = event => {
+  const submit = event => {
     event.preventDefault();
     const contactData = {
       name: name,
@@ -34,15 +34,15 @@ const ContactForm = ({ addContact }) => {
   };
 
   return (
-    <form onSubmit={Submit} className={css.form}>
+    <form onSubmit={submit} className={css.Form}>
       <label>
         <span>Name</span>
-        <input type="text" name="name" onChange={InputChange} value={name} />
+        <input type="text" name="name" onChange={inputChange} value={name} />
         <span>Number</span>
         <input
           type="text"
           name="number"
-          onChange={InputChange}
+          onChange={inputChange}
           value={number}
         />
       </label>
